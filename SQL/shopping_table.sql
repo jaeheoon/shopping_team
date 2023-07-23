@@ -222,6 +222,8 @@ REFERENCES team.PRODUCT (
 	PROCODE
 );
 
+
+
 -- DEFAULT와 COMMENT 추가--------------------------------------------------------------------------
 ALTER TABLE team.PRODUCT_ORD MODIFY (STATUS NUMBER(10) DEFAULT 1);
 COMMENT ON COLUMN team.PRODUCT_ORD.STATUS IS '1:주문, 2:교환, 3:환불, 4:주소';
