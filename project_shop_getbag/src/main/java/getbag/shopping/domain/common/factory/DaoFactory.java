@@ -1,0 +1,29 @@
+package getbag.shopping.domain.common.factory;
+
+import getbag.shopping.domain.member.dao.JdbcMemberDao;
+import getbag.shopping.domain.member.dao.MemberDao;
+import getbag.shopping.domain.product.dao.JdbcProductDao;
+import getbag.shopping.domain.product.dao.ProductDao;
+
+/**
+ * Simple Factory 적용
+ */
+public class DaoFactory {
+
+	private static DaoFactory instance = new DaoFactory();
+
+	private DaoFactory() {}
+
+	public static DaoFactory getInstance() {
+		return instance;
+	}
+
+	// MemberDao 구현체 반환
+	public MemberDao getMemberDao() {
+		return new JdbcMemberDao();
+	}
+	
+	public ProductDao getProductDao() {
+		return new JdbcProductDao();
+	}
+}

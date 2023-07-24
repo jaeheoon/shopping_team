@@ -10,26 +10,24 @@ import getbag.shopping.web.mvc.controller.HttpController;
  * /member/signup
  */
 public class MemberSignupController implements HttpController {
-	
-	
-	@Override
-	public String process(Map<String, String> paramMap, Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) {
-		String viewName = null;
-		// 회원 가입 화면 요청 (GET)
-		if(request.getMethod().equalsIgnoreCase("get")) {
-			viewName = "member/signup";
-		}else { // 회원 가입 요청 (POST)
-			viewName = "member/signup-result";
-			String name = paramMap.get("name");
-			String id = paramMap.get("id");
-			String passwd = paramMap.get("passwd");
-			String email = paramMap.get("email");
-
-		}
-		return viewName;
-	}
+   
+   
+   @Override
+   public String process(Map<String, String> paramMap, Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) {
+      String viewName = null;
+      // 회원 가입 화면 요청 (GET)
+      if(request.getMethod().equalsIgnoreCase("get")) {
+         viewName = "member/signup";
+      }else { // 회원 가입 요청 (POST)
+         viewName = "member/signup-action";
+         String id = paramMap.get("id");
+         String passwd = paramMap.get("passwd");
+         String name = paramMap.get("name");
+         String birth = paramMap.get("birth");
+      }
+      return viewName;
+   }
 }
-
 
 
 
