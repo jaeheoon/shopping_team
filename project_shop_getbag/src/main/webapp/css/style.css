@@ -219,9 +219,13 @@ footer{
 }
 
 
-/********** Article(Support) **********/
+/********** Support **********/
 .support{
     width: 70% !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
 }
 
 .accordion-button:after {

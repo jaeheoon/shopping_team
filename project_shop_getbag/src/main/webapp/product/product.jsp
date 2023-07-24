@@ -1,5 +1,5 @@
-<!-- <%@ page contentType="text/html; charset=utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,53 +18,7 @@
 
 <body>
 	<!-- =============== Header =============== -->
-<nav class="navbar navbar-expand-sm">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMini">
-      <ul class="navbar-nav fs-6">
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">매장찾기</a>
-        </li>
-        <li class="nav-item me-2">
-          <a class="nav-link" href="#">마이페이지</a>
-        </li>
-        <li class="nav-item me-5">
-          <a class="nav-link" href="#">위시리스트</a>
-        </li>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-	
-	<!-- <jsp:include page="/modules/header.jsp" /> -->
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid"  id="navbarNav">
-        <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="" class="logo"></a>
-        <div class="collapse navbar-collapse justify-content-end">
-          <ul class="navbar-nav">
-            <li class="nav-item mt-2 mb-2 mx-4">
-              <a class="nav-link" href="#">상품</a>
-            </li>
-            <li class="nav-item mt-2 mb-2 mx-4">
-              <a class="nav-link" href="#">고객센터</a>
-            </li>
-            <li class="nav-item mt-2 mb-2 mx-4">
-              <a class="nav-link" href="#">장바구니</a>
-            </li>
-            <li class="nav-item mt-2 mb-2 mx-4">
-              <a class="nav-link" href="#">회원가입</a>
-            </li>
-            <li class="nav-item mt-2 mb-2 mx-4 me-5">
-              <a class="nav-link" href="#">로그인</a>
-            </li>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <jsp:include page="/modules/header.jsp" />
   
 
   <!-- =============== Product =============== -->
@@ -88,28 +42,28 @@
     <div class="productItems">
       <div class="row">
         <div class="col-3 p-0">
-          <a href="#"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
+          <a href="<%=request.getContextPath()%>/product/product-detail.jsp"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">BB SOFT 라지 플랩 백 옵틱 화이트</p>
             <p>₩ 3,145,000</p>
           </div>
         </div>
         <div class="col-3 p-0">
-          <a href="#"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
+          <a href="<%=request.getContextPath()%>/product/product-detail.jsp"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">BB SOFT 라지 플랩 백 옵틱 화이트</p>
             <p>₩ 3,145,000</p>
           </div>
         </div>
         <div class="col-3 p-0">
-          <a href="#"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
+          <a href="<%=request.getContextPath()%>/product/product-detail.jsp"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">BB SOFT 라지 플랩 백 옵틱 화이트</p>
             <p>₩ 3,145,000</p>
           </div>
         </div>
         <div class="col-3 p-0">
-          <a href="#"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
+          <a href="<%=request.getContextPath()%>/product/product-detail.jsp"><img src="../img/sample1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">BB SOFT 라지 플랩 백 옵틱 화이트</p>
             <p>₩ 3,145,000</p>
@@ -176,7 +130,6 @@
             <p>₩ 4,700,000</p>
           </div>
         </div>
-        </div>
       </div>
 
       <div class="row mt-3">
@@ -210,25 +163,12 @@
         </div>
       </div>
       <br>
+	</div>
   </div>
   
 
   <!-- =============== Footer =============== -->
-  <!-- <jsp:include page="/modules/header.jsp" /> -->
-  <footer>
-    <div class="inner">
-      <div class="footer-message mt-3 ms-5">갯백 주식회사 · 대표 김갯백 · 사업자등록번호 570-00-0000</div>
-        <div class="footer-message ms-5">위치 서울특별시 노원구 상계료 64 화랑빌딩</div>  
-      <div class="row justify-content-between">
-        <div class="col-6">
-          <div class="footer-message ms-5 mb-3">고객센터 전화 문의 02-000-0000 | FAX 02-000-0000 | 이메일 service@getbag.co.kr</div>
-        </div>
-      <div class="col-6">
-        <div class="footer-copyright">ⓒ GETBAG Corp.</div>
-      </div>
-    </div>
-    </div>
-  </footer>
+  <jsp:include page="/modules/footer.jsp" />
 
 
 	<!-- JavaScript Libraries -->
