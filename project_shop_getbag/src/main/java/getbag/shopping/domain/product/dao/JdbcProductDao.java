@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import getbag.shopping.domain.member.dto.Member;
 import getbag.shopping.domain.product.dto.Product;
 
 /**
@@ -29,9 +28,10 @@ public class JdbcProductDao implements ProductDao {
 		  .append("  proimg,")
 		  .append("  proimgqty,")
 		  .append("  proinfo,")
+		  .append("  procolor,")
 		  .append("  probrand,")
 		  .append("  procount")
-		  .append(" ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		  .append(" ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		
 		PreparedStatement pstmt = null;
 		try {
@@ -43,8 +43,9 @@ public class JdbcProductDao implements ProductDao {
 			pstmt.setString(5, product.getPimage());
 			pstmt.setString(6, product.getPimageqty());
 			pstmt.setString(7, product.getDescription());
-			pstmt.setString(8, product.getBrand());
-			pstmt.setString(9, String.valueOf(product.getQuantitiy()));
+			pstmt.setString(8, product.getColor());
+			pstmt.setString(9, product.getBrand());
+			pstmt.setString(10, String.valueOf(product.getQuantitiy()));
 			pstmt.executeUpdate();
 			success = true;
 		} catch (Exception e) {
@@ -75,6 +76,7 @@ public class JdbcProductDao implements ProductDao {
 				String name = rs.getString("proname");
 				String price = rs.getString("proprice");
 				String description = rs.getString("proinfo");
+				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
 				String category = rs.getString("catecode");
 				String image = rs.getString("proimg");
@@ -84,7 +86,8 @@ public class JdbcProductDao implements ProductDao {
 				product.setPid(id);
 				product.setPname(name);
 				product.setPrice(Double.valueOf(price));
-				product.setDescription(description);;
+				product.setDescription(description);
+				product.setColor(color);
 				product.setBrand(brand);
 				product.setCategory(category);
 				product.setPimage(image);
@@ -121,6 +124,7 @@ public class JdbcProductDao implements ProductDao {
 				String name = rs.getString("proname");
 				String price = rs.getString("proprice");
 				String description = rs.getString("proinfo");
+				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
 				String category = rs.getString("catecode");
 				String image = rs.getString("proimg");
@@ -131,6 +135,7 @@ public class JdbcProductDao implements ProductDao {
 				product.setPname(name);
 				product.setPrice(Double.valueOf(price));
 				product.setDescription(description);;
+				product.setColor(color);
 				product.setBrand(brand);
 				product.setCategory(category);
 				product.setPimage(image);
@@ -167,6 +172,7 @@ public class JdbcProductDao implements ProductDao {
 				String name = rs.getString("proname");
 				String price = rs.getString("proprice");
 				String description = rs.getString("proinfo");
+				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
 				String category = rs.getString("catecode");
 				String image = rs.getString("proimg");
@@ -177,6 +183,7 @@ public class JdbcProductDao implements ProductDao {
 				product.setPname(name);
 				product.setPrice(Double.valueOf(price));
 				product.setDescription(description);;
+				product.setColor(color);
 				product.setBrand(brand);
 				product.setCategory(category);
 				product.setPimage(image);

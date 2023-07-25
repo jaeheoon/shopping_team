@@ -97,10 +97,10 @@ public class ProductServiceImpl implements ProductService{
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		ProductService productService = serviceFactory.getProductService();
 //		Product product = null;
-//		product = new Product("1", "작은 가방", 2300000, "작고 세련된 가방", "보테가", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 2);
-//		product = new Product("2", "중간 가방", 5000000, "은근히 큰 가방", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 4);
-//		product = new Product("3", "큰 가방", 6700000, "대용량 가방", "프라다", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 5);
-//		product = new Product("4", "핸드백", 4800000, "손에 들고 다니기 좋은 가방", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 1);
+//		product = new Product("1", "작은 가방", 2300000, "작고 세련된 가방", "white", "보테가", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 2);
+//		product = new Product("2", "중간 가방", 5000000, "은근히 큰 가방", "yellow", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 4);
+//		product = new Product("3", "큰 가방", 6700000, "대용량 가방", "yellow", "프라다", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 5);
+//		product = new Product("4", "핸드백", 4800000, "손에 들고 다니기 좋은 가방", "brown", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 1);
 //		product = productService.registerProduct(product);
 //		System.out.println("등록 후 상세정보 : " + product);
 		

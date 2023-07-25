@@ -14,6 +14,7 @@ public class Product {
 	private String pname; 			// 상품 이름      		 - proname
 	private double price; 			// 상품 가격      		 - proprice
 	private String description;		// 상품 설명      		 - proinfo
+	private String color;			// 상품 색깔      		 - procolor
 	private String brand; 			// 브랜드      	  		 - probrand
 	private String category; 		// 분류(여성/남성) 		 - catecode
 	private String pimage; 			// 상품 이미지     		 - proimg
@@ -22,13 +23,14 @@ public class Product {
 
 	public Product() {}
 
-	public Product(String pid, String pname, double price, String description, String brand, String category,
+	public Product(String pid, String pname, double price, String description, String color, String brand, String category,
 			String pimage, String pimageqty, int quantitiy) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
 		this.price = price;
 		this.description = description;
+		this.color = color;
 		this.brand = brand;
 		this.category = category;
 		this.pimage = pimage;
@@ -67,6 +69,14 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 	public String getBrand() {
 		return brand;
@@ -93,7 +103,7 @@ public class Product {
 	}
 	
 	public String getPimageqty() {
-		return pimage;
+		return pimageqty;
 	}
 
 	public void setPimageqty(String pimageqty) {
@@ -110,7 +120,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [상품 아이디=" + pid + ", 상품 이름=" + pname + ", 상품 가격=" + price + ", 상품 설명=" + description
+		return "Product [상품 아이디=" + pid + ", 상품 이름=" + pname + ", 상품 가격=" + price + ", 상품 설명=" + description + ", 상품 색깔=" + color
 				+ ", 브랜드=" + brand + ", 분류(여성 1/남성 2)=" + category + ", 상품 이미지=" + pimage + ", 상품 상세 이미지=" + pimageqty + ", 장바구니 담은 갯수=" + quantitiy
 				+ "]";
 	}
