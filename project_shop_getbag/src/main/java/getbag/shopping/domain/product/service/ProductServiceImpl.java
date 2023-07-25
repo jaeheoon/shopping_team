@@ -7,8 +7,6 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import getbag.shopping.domain.common.factory.ServiceFactory;
-import getbag.shopping.domain.member.dao.MemberDao;
-import getbag.shopping.domain.member.dto.Member;
 import getbag.shopping.domain.product.dao.ProductDao;
 import getbag.shopping.domain.product.dto.Product;
 
@@ -33,11 +31,11 @@ public class ProductServiceImpl implements ProductService{
 			// 트랜잭션 시작
 			connection = dataSource.getConnection();
 			connection.setAutoCommit(false);
-			// memberDao 사용
+			// productDao 사용
 			// 등록
-//			memberDao.create(connection, product);
+			productDao.create(connection, product);
 			// 상세조회
-//			product = memberDao.findById(connection, product.getId());
+			product = productDao.findByName(connection, product.getPname());
 			// 정상 처리 시 커밋
 			connection.commit();
 		} catch (Exception e) {
@@ -46,63 +44,73 @@ public class ProductServiceImpl implements ProductService{
 		} finally {
 			try {if(connection != null) connection.close();} catch (SQLException e1) {}
 		}
-		return null;
+		return product;
 	}
 
 	@Override
-	public Product isMember(String id, String passwd) {
-		Member member = null;
+	public Product readNameProduct(String name) {
+		Product product = null;
 		Connection connection = null;
 		try {
-			// select는 트랜잭션 X
 			connection = dataSource.getConnection();
-//			member = productDao.findByUser(connection, id, passwd);
+			product = productDao.findByName(connection, name);
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			try {if(connection != null) connection.close();} catch (SQLException e1) {}
 		}
-		return null;
+		return product;
 	}
-
+	
 	@Override
-	public List<Product> getProducts() {
-		List<Product> products = null;
+	public Product readNumProduct(String code) {
+		Product product = null;
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
-			products = productDao.findByAll(connection);
+			product = productDao.findByNum(connection, code);
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			try {if(connection != null) connection.close();} catch (SQLException e1) {}
 		}
-		return products;
+		return product;
 	}
-
+	
 	@Override
-	public Product readProduct(String id) {
-		Member member = null;
+	public List<Product> readProduct() {
+		List<Product> list = null;
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
-//			member = memberDao.findById(connection, id);
+			list = productDao.findByAll(connection);
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			try {if(connection != null) connection.close();} catch (SQLException e1) {}
 		}
-		return null;
+		return list;
 	}
 	
 	// 테스트 메인
 	public static void main(String[] args) {
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		ProductService productService = serviceFactory.getProductService();
+//		Product product = null;
+//		product = new Product("1", "작은 가방", 2300000, "작고 세련된 가방", "보테가", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 2);
+//		product = new Product("2", "중간 가방", 5000000, "은근히 큰 가방", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 4);
+//		product = new Product("3", "큰 가방", 6700000, "대용량 가방", "프라다", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 5);
+//		product = new Product("4", "핸드백", 4800000, "손에 들고 다니기 좋은 가방", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 1);
+//		product = productService.registerProduct(product);
+//		System.out.println("등록 후 상세정보 : " + product);
 		
-		Product product= new Product("1", "미니 가방", "5000000", "4800000", "작고 세련된 작은 가방", "150", "testImage1.png", "testImage1.png,testImage2.png,testImage3.png");
-		product = productService.registerProduct(product);
-		System.out.println("등록 후 상세정보 : " + product);
+//		Product product = productService.readNumProduct("3");
+//		System.out.println(product);
+		
+//		List<Product> list = productService.readProduct();
+//		for (Product product : list) {
+//			System.out.println(product);
+//		}
 		
 //		Member loginMember = memberService.isMember("bangry", "1111");
 //		System.out.println(loginMember);

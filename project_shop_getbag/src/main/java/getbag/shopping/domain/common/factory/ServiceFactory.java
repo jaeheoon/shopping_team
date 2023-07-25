@@ -68,7 +68,7 @@ public class ServiceFactory {
 	}
 	
 	public ProductService getProductService() {
-		// MemberServiceImpl 생성 및 생성자를 이용한 의존관계 설정
+		// ProductServiceImpl 생성 및 생성자를 이용한 의존관계 설정
 		return new ProductServiceImpl(dataSource, daoFactory.getProductDao());
 	}
 	

@@ -36,12 +36,22 @@ CREATE TABLE team.product(
   catecode NUMBER(20),
   proname VARCHAR2(30),
   proprice VARCHAR2(30),
-  prosale VARCHAR2(30),
   proinfo VARCHAR2(500),
   proqty NUMBER(30, 0),
-  prothumb VARCHAR2(500),
-  proimg VARCHAR2(500)
+  proimg VARCHAR2(500),
+  proimgqty VARCHAR2(500)
 );
+
+ALTER TABLE team.product
+ADD proimgqty VARCHAR2(500);
+
+ALTER TABLE team.product
+ADD procount NUMBER(30);
+
+ALTER TABLE team.product
+DROP COLUMN prosale;
+
+commit;
 
 CREATE TABLE team.notice(
   noticode NUMBER(20),
@@ -53,12 +63,10 @@ CREATE TABLE team.notice(
 
 CREATE TABLE team.member(
   id VARCHAR2(30),
-  pwd VARCHAR2(200),
-  email VARCHAR2(30),
-  hp VARCHAR2(30),
+  passwd VARCHAR2(200),
   name VARCHAR2(30),
-  lotaddr VARCHAR2(100),
-  etcaddr VARCHAR2(100)
+  birthday DATE,
+  regdate DATE
 );
 
 CREATE TABLE team.category(
@@ -101,6 +109,8 @@ CREATE TABLE team.product_rev(
 );
 
 DESC member;
+
+-- DROP TABLE team.cart CASCADE CONSTRAINTS;
 
 --테이블 생성과 제약조건 분리 생성
 -- PRIMARY KEY -----------------------------------------------------------------------------------------
@@ -149,7 +159,6 @@ ALTER TABLE team.PRODUCT_REV ADD CONSTRAINT PK_PRODUCT_REV PRIMARY KEY (
 ALTER TABLE team.MEMBER ADD CONSTRAINT PK_MEMBER PRIMARY KEY (
 	ID
 );
-
 
 -- FOREIGN KEY -----------------------------------------------------------------------------------------
 ALTER TABLE team.PRODUCT_ORD ADD CONSTRAINT FK_MEMBER_TO_PRODUCT_ORD_1 FOREIGN KEY (
@@ -238,6 +247,7 @@ COMMENT ON COLUMN team.PAY.PAYMENT IS '1: 무통장입금
 
 ALTER TABLE team.CART MODIFY (ISCHECKED NUMBER(10) DEFAULT 1);    --체크 여부 - 디폴트 체크
 ALTER TABLE team.CART MODIFY (ISPAID NUMBER(10) DEFAULT 0);       --결제 여부 - 디폴트 체크 해제
+ALTER TABLE team.MEMBER MODIFY (regdate DATE DEFAULT SYSDATE);    --계정 생성 날짜
 
 -- PRODUCT_ORD 테이블의 ORDERCODE, USERID에 NOT NULL 조건 추가
 ALTER TABLE team.PRODUCT_ORD MODIFY (ORDERCODE NUMBER(20, 0) NOT NULL);
