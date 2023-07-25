@@ -2,13 +2,12 @@ package getbag.shopping.domain.product.dto;
 
 /**
  * JavaBean 규약에 따라 만든 재사용 가능한 컴포넌트
- * 
+ * 상품 정보
  * @author 홍재헌
  *
  */
 public class Product {
 	
-//	procode - 상품 코드는 db에서 시퀀스로 등록되어있음
 //									   설명           		 - DB에 등록된 이름
 	private String pid; 			// 상품 아이디    		 - procode
 	private String pname; 			// 상품 이름      		 - proname

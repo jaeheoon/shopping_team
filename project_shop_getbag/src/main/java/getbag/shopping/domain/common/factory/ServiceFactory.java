@@ -12,6 +12,8 @@ import getbag.shopping.domain.member.service.MemberService;
 import getbag.shopping.domain.member.service.MemberServiceImpl;
 import getbag.shopping.domain.product.service.ProductService;
 import getbag.shopping.domain.product.service.ProductServiceImpl;
+import getbag.shopping.domain.support.service.SupportService;
+import getbag.shopping.domain.support.service.SupportServiceImpl;
 
 /**
  * 서비스(비즈니스) 객체 생성 및 의존관계 설정
@@ -71,6 +73,12 @@ public class ServiceFactory {
 		// ProductServiceImpl 생성 및 생성자를 이용한 의존관계 설정
 		return new ProductServiceImpl(dataSource, daoFactory.getProductDao());
 	}
+	
+	public SupportService getSupportService() {
+		// SupportServiceImpl 생성 및 생성자를 이용한 의존관계 설정
+		return new SupportServiceImpl(dataSource, daoFactory.getSupportDao());
+	}
+	
 	
 	// 도메인(업무영역)별 xxxxService 객체 생성 및 반환
 }

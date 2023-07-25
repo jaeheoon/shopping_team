@@ -2,6 +2,7 @@ package getbag.shopping.domain.member.dto;
 
 /**
  * JavaBean 규약에 따라 만든 재사용 가능한 컴포넌트
+ * 계정 정보
  * @author 홍재헌
  *
  */
