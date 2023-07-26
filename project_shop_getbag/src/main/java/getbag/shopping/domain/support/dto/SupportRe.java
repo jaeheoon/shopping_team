@@ -9,7 +9,7 @@ package getbag.shopping.domain.support.dto;
 public class SupportRe {
 //	recode는 db 내 시퀀스로 동작, redate는 db 내 sysdate로 동작
 //									   		설명           	 - DB에 등록된 이름
-	private String reCode; 			// 상품 아이디    	 - recode
+	private String reCode; 			// 답변 코드    	 - recode
 	private String qnaCode; 		// 문의 코드    	 - qnacode - db에서 가져와서 저장하는 역할, 따로 생성자에서 등록은 안해준다
 	private String reCont; 			// 문의 내용    	 - recont
 

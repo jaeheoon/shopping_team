@@ -1,5 +1,3 @@
-header.jsp
-
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header class="header">
@@ -23,7 +21,7 @@ header.jsp
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid"  id="navbarNav">
          <div class="collapse navbar-collapse justify-content-start">
-            <a class="navbar-brand" href="<%=request.getContextPath()%>/getbag/index">
+            <a class="navbar-brand" href="<%=request.getContextPath()%>/">
            <img src="<%=request.getContextPath()%>/img/logo.png" alt="" class="logo"></a>
          </div>
         <div class="collapse navbar-collapse justify-content-end">
@@ -53,7 +51,7 @@ header.jsp
                      style="vertical-align: middle;">${loginMember.id}(${loginMember.name})님 반가워요!</span>
                </li>
                <li class="nav-item mt-2 mx-4 me-5">
-                  <a href="${path}/signin" class="btn btn-outline-secondary" data-bs-auto-close="outside">로그아웃</a>
+                  <a href="<%=request.getContextPath()%>/getbag/signout" class="btn btn-outline-secondary" data-bs-auto-close="outside">로그아웃</a>
                </li>
             </c:otherwise>
          </c:choose>

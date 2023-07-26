@@ -59,13 +59,7 @@ public class MemberSigninController implements HttpController {
                } else { 
                   model.put("errorMessage", "로그인 오류입니다. 다시 시도해주세요.");
                }
-            } else { // 로그아웃 요청 (GET)
-               // 세션 삭제
-               request.getSession().invalidate();
-               //return "redirect:/getbag/index";
             } 
-            
-            model.put("savedId", saveIdChecked);
             return viewName;
          }
 

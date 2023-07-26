@@ -57,7 +57,8 @@ public class JdbcSupportReDao implements SupportReDao {
 	public SupportRe findByCode(Connection connection, String code) {
 		SupportRe supportRe = null;
 		StringBuilder sb = new StringBuilder();
-		sb.append(" SELECT * FROM team.product_qna_re").append(" WHERE recode = ?");
+		sb.append(" SELECT * FROM team.product_qna_re")
+		  .append(" WHERE recode = ?");
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

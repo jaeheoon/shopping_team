@@ -120,7 +120,7 @@ public class ProductServiceImpl implements ProductService{
 //		product = productService.registerProduct(product);
 //		System.out.println("등록 후 상세정보 : " + product);
 		
-//		Product product = productService.readNumProduct("1");
+//		Product product = productService.readNumProduct("bw1");
 //		System.out.println(product);
 		
 //		List<Product> list = productService.readProduct();
