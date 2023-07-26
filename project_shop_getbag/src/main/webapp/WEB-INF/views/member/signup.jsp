@@ -1,5 +1,5 @@
-<!-- <%@ page contentType="text/html; charset=utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> -->
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,14 +36,14 @@
 
             <div class="mb-3">
               <label for="birth">생년월일</label> 
-              <input type="text" class="form-control" id="ubirth" name="birth" placeholder="YYYY-MM-DD" required>
+              <input type="text" class="form-control" id="birth" name="birth" placeholder="YYYY-MM-DD" required>
               <div class="invalid-feedback">생년월일을 입력해주세요.</div>
             </div>
-
+            
             <div class="mb-3">
-              <label for="email">* 이메일</label> 
-              <input type="email" class="form-control" id="uemail" name="email" placeholder="example@example.com" required>
-              <div class="invalid-feedback">이메일을 입력해주세요.</div>
+              <label for="id">* 아이디</label> 
+              <input type="id" class="form-control" id="uid" name="id" placeholder="" required>
+              <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
             </div>
             
             <div class="mb-3">
@@ -58,7 +58,7 @@
             </div>
             <div class="mb-4"></div>
             <button class="btn btn-simple mb-3" type="submit">가입완료</button>
-            <a href="<%=request.getContextPath()%>/member/signin.jsp"><div class="already mb-5">이미 계정이 있습니까?<br>로그인</div></a>
+            <a href="<%=request.getContextPath()%>/getbag/signin"><div class="already mb-5">이미 계정이 있습니까?<br>로그인</div></a>
           </form>
         </div>
       </div>

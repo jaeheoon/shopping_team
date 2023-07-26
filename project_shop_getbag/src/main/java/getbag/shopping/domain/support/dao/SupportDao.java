@@ -13,7 +13,7 @@ import getbag.shopping.domain.support.dto.Support;
 public interface SupportDao {
 	//문의 등록
 	public Support create(Connection connection, Support support);
-	//문의 제목으로 출력
+	//문의 코드로 출력
 	public Support findByCode(Connection connection, String code);
 	//문의 전체 출력
 	public List<Support> findByAll(Connection connection);

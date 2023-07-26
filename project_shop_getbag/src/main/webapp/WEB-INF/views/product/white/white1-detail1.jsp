@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <!-- Favicon -->
-<link href="/img/favicon.ico" rel="icon">
+<link href="img/favicon.ico" rel="icon">
 
 <!-- BootStrap -->
 <link href="/css/bootstrap.css" rel="stylesheet">
@@ -27,9 +27,9 @@
       <h5 class="mb-4 mt-5 ms-3">홈페이지 > 상품 > 여성</h5>
       <div class="row">
         <div class="col-6 mb-5">
-          <img src="<%=request.getContextPath()%>/img/black/black1-detail1.jpg" alt="" class="product-detail border-bottom-0">
-          <img src="<%=request.getContextPath()%>/img/black/black1-detail2.jpg" alt="" class="product-detail border-bottom-0">
-          <img src="<%=request.getContextPath()%>/img/black/black1-detail3.jpg" alt="" class="product-detail">
+          <img src="<%=request.getContextPath()%>/img/white/white1-detail1.jpg" alt="" class="product-detail border-bottom-0">
+          <img src="<%=request.getContextPath()%>/img/white/white1-detail2.jpg" alt="" class="product-detail border-bottom-0">
+          <img src="<%=request.getContextPath()%>/img/white/white1-detail3.jpg" alt="" class="product-detail">
         </div>
         <div class="col-6">
           <div style="margin-left: 15%;">
@@ -50,8 +50,8 @@
             	<li>소재: 100% 송아지 가죽</li>
             	<li>크기: L36 x H23.8 x W3cm</li>
             </ul>
-            <a href="#"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
-            <a href="#"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
+            <a href="<%=request.getContextPath()%>/getbag/basket-contain"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
+            <a href="<%=request.getContextPath()%>/getbag/wish-contain"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
           </div>
         </div>
       </div>

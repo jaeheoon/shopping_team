@@ -22,7 +22,7 @@ public class JdbcProductDao implements ProductDao {
 		StringBuilder sb = new StringBuilder();
 		sb.append(" INSERT INTO product (")
 		  .append("  procode,")
-		  .append("  catecode,")
+		  .append("  catename,")
 		  .append("  proname,")
 		  .append("  proprice,")
 		  .append("  proimg,")
@@ -78,7 +78,7 @@ public class JdbcProductDao implements ProductDao {
 				String description = rs.getString("proinfo");
 				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
-				String category = rs.getString("catecode");
+				String category = rs.getString("catename");
 				String image = rs.getString("proimg");
 				String imageqty = rs.getString("proimgqty");
 				String quantitiy = rs.getString("procount");
@@ -126,7 +126,7 @@ public class JdbcProductDao implements ProductDao {
 				String description = rs.getString("proinfo");
 				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
-				String category = rs.getString("catecode");
+				String category = rs.getString("catename");
 				String image = rs.getString("proimg");
 				String imageqty = rs.getString("proimgqty");
 				String quantitiy = rs.getString("procount");
@@ -174,7 +174,7 @@ public class JdbcProductDao implements ProductDao {
 				String description = rs.getString("proinfo");
 				String color = rs.getString("procolor");
 				String brand = rs.getString("probrand");
-				String category = rs.getString("catecode");
+				String category = rs.getString("catename");
 				String image = rs.getString("proimg");
 				String imageqty = rs.getString("proimgqty");
 				String quantitiy = rs.getString("procount");

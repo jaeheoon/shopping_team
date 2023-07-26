@@ -97,8 +97,8 @@ public class MemberServiceImpl implements MemberService{
 	public static void main(String[] args) {
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		MemberService memberService = serviceFactory.getMemberService();
-//		
-//		Member member = new Member("bangry1", "1111", "김재헌", "1997-01-10", null);
+		
+//		Member member = new Member("bangry1", "1111", "김재헌", "2000-02-10");
 //		member = memberService.registerMember(member);
 //		System.out.println("등록 후 상세정보 : " + member);
 		

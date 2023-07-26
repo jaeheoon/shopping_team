@@ -92,7 +92,8 @@
     </div>
   </main>
 
-
+  <!-- =============== floating =============== -->
+  <jsp:include page="/WEB-INF/views/modules/floating.jsp" />
 
   <!-- =============== Footer =============== -->
   <jsp:include page="/WEB-INF/views/modules/footer.jsp" />

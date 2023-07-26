@@ -11,7 +11,7 @@ import getbag.shopping.domain.support.dao.SupportDao;
 import getbag.shopping.domain.support.dto.Support;
 
 /**
- * 회원 관련 비즈니스 로직 처리 및 트랜잭션 관리 구현체
+ * 고객센터 관련 비즈니스 로직 처리 및 트랜잭션 관리 구현체
  * @author 홍재헌
  */
 public class SupportServiceImpl implements SupportService{
@@ -64,30 +64,12 @@ public class SupportServiceImpl implements SupportService{
 	
 	// 테스트 메인
 	public static void main(String[] args) {
-//		ServiceFactory serviceFactory = ServiceFactory.getInstance();
-		
-//		상품 관련 테스트------------------------------------------------------------------------------------------------------------------------------------------------------
-//		ProductService productService = serviceFactory.getProductService();
-//		Product product = null;
-//		product = new Product("1", "작은 가방", 2300000, "작고 세련된 가방", "white", "보테가", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 2);
-//		product = new Product("2", "중간 가방", 5000000, "은근히 큰 가방", "yellow", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 4);
-//		product = new Product("3", "큰 가방", 6700000, "대용량 가방", "yellow", "프라다", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 5);
-//		product = new Product("4", "핸드백", 4800000, "손에 들고 다니기 좋은 가방", "brown", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 1);
-//		product = productService.registerProduct(product);
-//		System.out.println("등록 후 상세정보 : " + product);
-		
-//		Product product = productService.readNumProduct("3");
-//		System.out.println(product);
-		
-//		List<Product> list = productService.readProduct();
-//		for (Product product : list) {
-//			System.out.println(product);
-//		}
+		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		
 //		문의 관련 테스트------------------------------------------------------------------------------------------------------------------------------------------------------
 //		SupportService supportService = serviceFactory.getSupportService();
 //		Support support = null;
-//		support = new Support("2", "맘에 들어요", "깔끔하고 이쁘네요", "최재헌");
+//		support = new Support("맘에 들어요", "깔끔하고 이쁘네요", "최재헌");
 //		support = supportService.registerSupport(support);
 //		System.out.println("등록 후 상세정보 : " + support);
 		
@@ -95,17 +77,6 @@ public class SupportServiceImpl implements SupportService{
 //		for (Support support2 : list) {
 //			System.out.println(support2);
 //		}
-		
-//		멤버 관련 테스트------------------------------------------------------------------------------------------------------------------------------------------------------
-//		Member loginMember = memberService.isMember("bangry", "1111");
-//		System.out.println(loginMember);
-		
-//		List<Member> members = memberService.getMembers();
-//		System.out.println(members);
-		
-//		Member detailMember = memberService.readMember("bangry1");
-//		System.out.println(detailMember);
-		
 	}
 
 }

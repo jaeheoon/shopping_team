@@ -33,9 +33,18 @@
         </div>
         <div class="col-6">
           <div style="margin-left: 15%;">
-            <h3 class="mb-3 mt-4 fw-bold">BB SOFT 라지 플랩 백 옵틱 화이트</h3>
-            <h5 class="fw-bold mb-5">₩ 3,145,000</h5>
-            <h5 class="mb-5">화이트 피치 송아지 가죽 소재의 BB Soft 라지 플랩백,<br>빈티지 실버 장식</h5>
+          	<h3 class="mb-3 mt-4 fw-bold">[JACQUEMUS]&nbsp;&nbsp;Le grand Bambino </h3>
+            <h5 class="fw-bold mb-5">₩ 1,300,000</h5>
+            <ul class="mb-5">
+            	<li>조절 가능한 크로스바디 스트랩이 있는 핸드백</li>
+            	<li>작은 손잡이</li>
+            	<li>탈착식 스트랩 - 카드 슬롯 후면 포켓</li>
+            	<li>플랩 자석 잠금장치</li>
+            	<li>골든 JACQUEMUS 로고</li>
+            	<li>제조국: 이탈리아</li>
+            	<li>소재: 100% 가죽</li>
+            	<li>크기: 23.5cm x 13cm</li>
+            </ul>
             <a href="#"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
             <a href="#"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
           </div>

@@ -33,9 +33,22 @@
         </div>
         <div class="col-6">
           <div style="margin-left: 15%;">
-            <h3 class="mb-3 mt-4 fw-bold">BB SOFT 라지 플랩 백 옵틱 화이트</h3>
-            <h5 class="fw-bold mb-5">₩ 3,145,000</h5>
-            <h5 class="mb-5">화이트 피치 송아지 가죽 소재의 BB Soft 라지 플랩백,<br>빈티지 실버 장식</h5>
+          	<h3 class="mb-3 mt-4 fw-bold">[BOTTEGA VENETA]&nbsp;&nbsp;캔디 조디</h3>
+            <h5 class="fw-bold mb-5">₩ 2,140,000</h5>
+            <ul class="mb-5">
+            	<li>양가죽 소재를 인트레치아토 위빙으로 완성한 장인 정신이 돋보이는 탑핸들 백으로 <br>
+            	부드럽고 둥근 형태가 특징적이며 시그니처 놋 디테일이 있음</li>
+            	<li>가죽 소재를 인트레치아토 위빙으로 완성한 마이크로 탑 핸들 백</li>
+            	<li>한 개의 수납공간</li>
+            	<li>지퍼 잠금장치</li>
+            	<li>소재: 100% 램스킨</li>
+            	<li>안감: 카프스킨</li>
+            	<li>컬러: 아이스크림</li>
+            	<li>하드웨어: 골드 마감</li>
+            	<li>핸들 드롭: 6cm</li>
+            	<li>제조국: 이탈리아</li>
+            	<li>크기: L17 x H16 x W6.5cm</li>
+            </ul>
             <a href="#"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
             <a href="#"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
           </div>

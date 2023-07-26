@@ -97,30 +97,36 @@ public class ProductServiceImpl implements ProductService{
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		ProductService productService = serviceFactory.getProductService();
 //		Product product = null;
-//		product = new Product("1", "작은 가방", 2300000, "작고 세련된 가방", "white", "보테가", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 2);
-//		product = new Product("2", "중간 가방", 5000000, "은근히 큰 가방", "yellow", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 4);
-//		product = new Product("3", "큰 가방", 6700000, "대용량 가방", "yellow", "프라다", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 5);
-//		product = new Product("4", "핸드백", 4800000, "손에 들고 다니기 좋은 가방", "brown", "샤넬", "1", "testImage.png", "testImage1.png, testImage2.png, testImage3.png", 1);
+//		product = new Product("wh1", "하얀 가방", 1000000, "<li>하얗고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "white", "BALLENCIAGA", "여성", "white1.jpg", "white1-detail1.jpg,white1-detail2.jpg,white1-detail3.jpg", 1);
+//		product = new Product("wh2", "하얀 가방", 1000000, "<li>하얗고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "white", "BALLENCIAGA", "여성", "white2.jpg", "white2-detail1.jpg,white2-detail2.jpg,white2-detail3.jpg", 1);
+//		product = new Product("wh3", "하얀 가방", 1000000, "<li>하얗고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "white", "BALLENCIAGA", "여성", "white3.jpg", "white3-detail1.jpg,white3-detail2.jpg,white3-detail3.jpg", 1);
+//		product = new Product("wh4", "하얀 가방", 1000000, "<li>하얗고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "white", "BALLENCIAGA", "여성", "white4.jpg", "white4-detail1.jpg,white4-detail2.jpg,white4-detail3.jpg", 1);
+
+//		product = new Product("br1", "갈색 가방", 1100000, "<li>세련되고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "brown", "BALLENCIAGA", "여성", "brown1.jpg", "brown1-detail1.jpg,brown1-detail2.jpg,brown1-detail3.jpg", 1);
+//		product = new Product("br2", "갈색 가방", 1100000, "<li>세련되고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "brown", "BALLENCIAGA", "여성", "brown2.jpg", "brown2-detail1.jpg,brown2-detail2.jpg,brown2-detail3.jpg", 1);
+//		product = new Product("br3", "갈색 가방", 1100000, "<li>세련되고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "brown", "BALLENCIAGA", "여성", "brown3.jpg", "brown3-detail1.jpg,brown3-detail2.jpg,brown3-detail3.jpg", 1);
+//		product = new Product("br4", "갈색 가방", 1100000, "<li>세련되고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "brown", "BALLENCIAGA", "여성", "brown4.jpg", "brown4-detail1.jpg,brown4-detail2.jpg,brown4-detail3.jpg", 1);
+
+//		product = new Product("bw1", "까만 가방", 1200000, "<li>깔끔하고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "black", "BALLENCIAGA", "여성", "black1.jpg", "black1-detail1.jpg,black1-detail2.jpg,black1-detail3.jpg", 1);
+//		product = new Product("bw2", "까만 가방", 1200000, "<li>깔끔하고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "black", "BALLENCIAGA", "여성", "black2.jpg", "black2-detail1.jpg,black2-detail2.jpg,black2-detail3.jpg", 1);
+//		product = new Product("bw3", "까만 가방", 1200000, "<li>깔끔하고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "black", "BALLENCIAGA", "여성", "black3.jpg", "black3-detail1.jpg,black3-detail2.jpg,black3-detail3.jpg", 1);
+//		product = new Product("bw4", "까만 가방", 1200000, "<li>깔끔하고 멋있는 가방입니다.</li><li>저도 사고 싶습니다.</li>", "black", "BALLENCIAGA", "여성", "black4.jpg", "black4-detail1.jpg,black4-detail2.jpg,black4-detail3.jpg", 1);
+
+//		product = new Product("yw1", "노란 가방", 1300000, "<li>귀엽고 깔끔한 가방입니다.</li><li>저도 사고 싶습니다.</li>", "yellow", "BALLENCIAGA", "여성", "yellow1.jpg", "yellow1-detail1.jpg,yellow1-detail2.jpg,yellow1-detail3.jpg", 1);
+//		product = new Product("yw2", "노란 가방", 1300000, "<li>귀엽고 깔끔한 가방입니다.</li><li>저도 사고 싶습니다.</li>", "yellow", "BALLENCIAGA", "여성", "yellow2.jpg", "yellow2-detail1.jpg,yellow2-detail2.jpg,yellow2-detail3.jpg", 1);
+//		product = new Product("yw3", "노란 가방", 1300000, "<li>귀엽고 깔끔한 가방입니다.</li><li>저도 사고 싶습니다.</li>", "yellow", "BALLENCIAGA", "여성", "yellow3.jpg", "yellow3-detail1.jpg,yellow3-detail2.jpg,yellow3-detail3.jpg", 1);
+//		product = new Product("yw4", "노란 가방", 1300000, "<li>귀엽고 깔끔한 가방입니다.</li><li>저도 사고 싶습니다.</li>", "yellow", "BALLENCIAGA", "여성", "yellow4.jpg", "yellow4-detail1.jpg,yellow4-detail2.jpg,yellow4-detail3.jpg", 1);
+
 //		product = productService.registerProduct(product);
 //		System.out.println("등록 후 상세정보 : " + product);
 		
-//		Product product = productService.readNumProduct("3");
+//		Product product = productService.readNumProduct("1");
 //		System.out.println(product);
 		
 //		List<Product> list = productService.readProduct();
 //		for (Product product : list) {
 //			System.out.println(product);
 //		}
-		
-//		Member loginMember = memberService.isMember("bangry", "1111");
-//		System.out.println(loginMember);
-		
-//		List<Member> members = memberService.getMembers();
-//		System.out.println(members);
-		
-//		Member detailMember = memberService.readMember("bangry1");
-//		System.out.println(detailMember);
-		
 	}
 
 }

@@ -8,10 +8,8 @@
 <%
 
 MemberService memberService = ServiceFactory.getInstance().getMemberService();
-memberService.registerMember(member);
-System.out.println("[SYS] 회원가입 완료");
-// response.sendRedirect("/signin");
+memberService.isMember("id", "passwd");
+System.out.println("로그인 완료");
+response.sendRedirect("/getbag/index");
 
 %>
-
-<jsp:forward page="signin.jsp"/>

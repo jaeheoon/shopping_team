@@ -16,13 +16,12 @@ public class Member {
 	
 	public Member() {}
 
-	public Member(String id, String passwd, String name, String birthday, String regdate) {
+	public Member(String id, String passwd, String name, String birthday) {
 		super();
 		this.id = id;
 		this.passwd = passwd;
 		this.name = name;
 		this.birthday = birthday;
-		this.regdate = regdate;
 	}
 
 	public String getId() {

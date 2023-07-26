@@ -15,7 +15,7 @@ public class Product {
 	private String description;		// 상품 설명      		 - proinfo
 	private String color;			// 상품 색깔      		 - procolor
 	private String brand; 			// 브랜드      	  		 - probrand
-	private String category; 		// 분류(여성/남성) 		 - catecode
+	private String category; 		// 분류(여성/남성) 		 - catename
 	private String pimage; 			// 상품 이미지     		 - proimg
 	private String pimageqty; 		// 상품 상세 이미지      - proimgqty
 	private int quantitiy; 			// 장바구니에 담을 개수  - procount
@@ -120,7 +120,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [상품 아이디=" + pid + ", 상품 이름=" + pname + ", 상품 가격=" + price + ", 상품 설명=" + description + ", 상품 색깔=" + color
-				+ ", 브랜드=" + brand + ", 분류(여성 1/남성 2)=" + category + ", 상품 이미지=" + pimage + ", 상품 상세 이미지=" + pimageqty + ", 장바구니 담은 갯수=" + quantitiy
+				+ ", 브랜드=" + brand + ", 분류(여성/남성)=" + category + ", 상품 이미지=" + pimage + ", 상품 상세 이미지=" + pimageqty + ", 장바구니 담은 갯수=" + quantitiy
 				+ "]";
 	}
 	

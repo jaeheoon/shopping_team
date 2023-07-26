@@ -33,9 +33,20 @@
         </div>
         <div class="col-6">
           <div style="margin-left: 15%;">
-            <h3 class="mb-3 mt-4 fw-bold">BB SOFT 라지 플랩 백 옵틱 화이트</h3>
-            <h5 class="fw-bold mb-5">₩ 3,145,000</h5>
-            <h5 class="mb-5">화이트 피치 송아지 가죽 소재의 BB Soft 라지 플랩백,<br>빈티지 실버 장식</h5>
+          	<h3 class="mb-3 mt-4 fw-bold">[LOEWE]&nbsp;&nbsp;자르디니에르 포켓</h3>
+            <h5 class="fw-bold mb-5">₩ 2,200,000</h5>
+            <ul class="mb-5">
+            	<li>가드너의 양동이 형태에 기반한 카프스킨으로 제작한 버킷 백으로, <br> 
+            	로에베 시그니처가 음각 처리되어 있으며 헤링본 코튼 캔버스 소재의 드로우스트링 탑이 있습니다.</li>
+            	<li>숄더 백 또는 탑 핸들 백으로 연출 가능</li>
+            	<li>탈착 가능한 숄더 스트랩</li>
+            	<li>애너그램 양각 처리</li>
+            	<li>메탈릭 컬러: 팔라듐</li>
+            	<li>제조국: 스페인</li>
+            	<li>주요 소재: 카프</li>
+            	<li>스트랩 길이: 103 - 123 cm, 무게: 0.23 kg</li>
+            	<li>크기: L11 x H15 x W11cm</li>
+            </ul>
             <a href="#"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
             <a href="#"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
           </div>

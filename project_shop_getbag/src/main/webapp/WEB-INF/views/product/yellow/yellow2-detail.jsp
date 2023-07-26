@@ -33,9 +33,23 @@
         </div>
         <div class="col-6">
           <div style="margin-left: 15%;">
-            <h3 class="mb-3 mt-4 fw-bold">BB SOFT 라지 플랩 백 옵틱 화이트</h3>
-            <h5 class="fw-bold mb-5">₩ 3,145,000</h5>
-            <h5 class="mb-5">화이트 피치 송아지 가죽 소재의 BB Soft 라지 플랩백,<br>빈티지 실버 장식</h5>
+          	<h3 class="mb-3 mt-4 fw-bold">[LOEWE]&nbsp;&nbsp;미니 퍼즐 폴드 토트</h3>
+            <h5 class="fw-bold mb-5">₩ 2,100,000</h5>
+			<ul class="mb-5">
+            	<li>퍼즐 폴드 토트는 아이코닉한 백의 시그니처와 같은 기하학적인 라인이 돋보이고,<br>
+            	이를 완전히 납작하게 접을 수 있도록 그래픽적이고 구조적인 패널로 재해석하여 여행 시 완벽한 동반자가 되어 줍니다.<br>
+            	부드럽고, 가볍고, 독창적인 제작 기술이 돋보이는 이 제품에는 절제된 로에베 브랜드 디테일이 자리 잡고 있습니다. <br>
+            	미니 버전은 샤이니 카프스킨 소재로 제작되었습니다.</li>
+            	<li>숄더 백, 크로스 백 또는 핸드 백으로 연출 가능</li>
+            	<li>탈착 및 조절 가능한 스트랩</li>
+            	<li>스웨이드 안감</li>
+            	<li>로에베 양각 골드</li>
+            	<li>메탈릭 컬러: 골드</li>
+            	<li>제조국: 스페인</li>
+            	<li>주요 소재: 샤이니 카프</li>
+            	<li>스트랩 길이: 99 - 114 cm, 핸들 길이: 14 cm, 무게: 0.2 kg</li>
+            	<li>크기: L16.5 x H20 x W9.5cm</li>
+            </ul>
             <a href="#"><button class="btn btn-simple mb-3" type="submit">장바구니에 추가</button></a>
             <a href="#"><button class="btn btn-white mb-3" type="submit">위시리스트에 추가</button></a>
           </div>
