@@ -73,8 +73,8 @@ public class SupportReServiceImpl implements SupportReService{
 //		supportRe = supportReService.registerSupport(supportRe);
 //		System.out.println("등록 후 상세정보 : " + supportRe);
 		
-//		supportRe = supportReService.readNumSupportRe("8");
-//		System.out.println("검색된 상세정보 : " + supportRe);
+		supportRe = supportReService.readNumSupportRe("2");
+		System.out.println("검색된 상세정보 : " + supportRe.getReCont());
 		
 	}
 

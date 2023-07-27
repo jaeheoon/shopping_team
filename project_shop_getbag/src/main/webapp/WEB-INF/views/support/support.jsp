@@ -1,8 +1,3 @@
-<%@page import="getbag.shopping.domain.common.factory.ServiceFactory"%>
-<%@page import="getbag.shopping.domain.support.dto.Support"%>
-<%@page import="getbag.shopping.domain.support.dto.SupportRe"%>
-<%@page import="getbag.shopping.domain.support.service.SupportService"%>
-<%@page import="getbag.shopping.domain.support.service.SupportReService"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -32,29 +27,6 @@
 	<!-- =============== Header =============== -->
 	<jsp:include page="/WEB-INF/views/modules/header.jsp" />
 
-	<!-- =============== Support-value =============== -->
-	<%
-	String recode = request.getParameter("recode");
-	SupportService supportService = ServiceFactory.getInstance().getSupportService();
-	SupportReService supportReService = ServiceFactory.getInstance().getSupportReService();
-
-	List<Support> list = supportService.readSupport();
-
-	Support[] supports = new Support[list.size()];
-	SupportRe[] supportRes = new SupportRe[list.size()];
-	String[] qnaCodes = new String[list.size()];
-
-	for (int i = 0; i < list.size(); i++) {
-		supports[i] = list.get(i);
-		supportRes[i] = supportReService.readNumSupportRe(list.get(i).getQnacode());
-	}
-	%>
-
-	<c:forEach items="${supports}" var="support" varStatus="status">
-		<p>${support.getQnatitle()}</p>
-	</c:forEach>
-
-
 	<!-- =============== Article(Support) =============== -->
 	<section class="support container">
 		<div class="border-bottom border-2 border-black mt-5">
@@ -63,10 +35,10 @@
 				<p class="mb-0 m-1">문의사항을 남겨주시면 빠른 시일 내에 답변해드리도록 하겠습니다.</p>
 			</div>
 		</div>
-		<form action="">
+		<form action="${path}/support">
 			<div class="p-5">
 				<textarea class="form-control border-dark-subtle border-3 p-3"
-					id="exampleFormControlTextarea1" rows="2"
+					id="exampleFormControlTextarea1" rows="2" name="content"
 					placeholder="문의사항을 입력해주세요."></textarea>
 				<div class="d-md-flex justify-content-end align-items-center mt-4">
 					<input type="submit" value="작성하기" id="sendBtn"
@@ -80,97 +52,89 @@
 			</div>
 		</div>
 
-		<!-- ======================Accordion Item 1====================== -->
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="flush-headingOne">
-				<button class="accordion-button collapsed border-bottom p-4"
-					type="button" data-bs-toggle="collapse"
-					data-bs-target="#flush-collapseOne" aria-expanded="false"
-					aria-controls="flush-collapseOne">
-					<p class="mb-0">
-						Q.
-						<%=supports[0].getQnatitle()%></p>
-				</button>
-			</h2>
-			<div id="flush-collapseOne" class="accordion-collapse collapse lh-lg"
-				aria-labelledby="flush-headingOne"
-				data-bs-parent="#accordionFlushExample">
-				<div class="accordion-body p-4">
-
-					<%=supportRes[0].getReCont()%>
-
+		<%-- 게시글 목록 반복 --%>
+		<c:forEach items="${list}" var="support" varStatus="loop">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="flush-heading${loop.index + 1}">
+					<button class="accordion-button collapsed border-bottom p-4"
+						type="button" data-bs-toggle="collapse"
+						data-bs-target="#flush-collapse${loop.index + 1}"
+						aria-expanded="false"
+						aria-controls="flush-collapse${loop.index + 1}">
+						<p class="mb-0">Q. ${support.getQnatitle()}</p>
+					</button>
+				</h2>
+				<div id="flush-collapse${loop.index + 1}"
+					class="accordion-collapse collapse lh-lg"
+					aria-labelledby="flush-heading${loop.index + 1}"
+					data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body p-4">
+						<%-- 여기에 문의 내용 --%>
+						<c:choose>
+							<c:when test="${support.getCont() == null}">
+		            최대한 빠르게 답변드리겠습니다. 조금만 기다려주시면 감사하겠습니다.
+		          </c:when>
+							<c:otherwise>
+		            ${support.getCont()}
+		          </c:otherwise>
+						</c:choose>
+					</div>
 				</div>
 			</div>
-		</div>
-
-		<!-- ======================Accordion Item 2====================== -->
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="flush-headingTwo">
-				<button
-					class="accordion-button collapsed border-top border-bottom p-4"
-					type="button" data-bs-toggle="collapse"
-					data-bs-target="#flush-collapseTwo" aria-expanded="false"
-					aria-controls="flush-collapseTwo">
-					<p class="mb-0">
-						Q.
-						<%=supports[1].getQnatitle()%></p>
-				</button>
-			</h2>
-			<div id="flush-collapseTwo" class="accordion-collapse collapse lh-lg"
-				aria-labelledby="flush-headingTwo"
-				data-bs-parent="#accordionFlushExample">
-				<div class="accordion-body p-4">
-
-					<%=supportRes[1].getReCont()%>
-
-				</div>
-			</div>
-		</div>
-
-		<!-- ======================Accordion Item 3====================== -->
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="flush-headingThree">
-				<button
-					class="accordion-button collapsed border-top border-bottom p-4"
-					type="button" data-bs-toggle="collapse"
-					data-bs-target="#flush-collapseThree" aria-expanded="false"
-					aria-controls="flush-collapseThree">
-					<p class="mb-0">
-						Q.
-						<%=supports[2].getQnatitle()%></p>
-				</button>
-			</h2>
-			<div id="flush-collapseThree"
-				class="accordion-collapse collapse lh-lg"
-				aria-labelledby="flush-headingThree"
-				data-bs-parent="#accordionFlushExample">
-				<div class="accordion-body p-4">
-
-					<%=supportRes[2].getReCont()%>
-
-				</div>
-			</div>
-		</div>
-
+		</c:forEach>
 
 		<!-- page nav-->
 		<div class="d-flex justify-content-center mt-5">
 			<nav aria-label="Page navigation example">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Previous"> <span aria-hidden="true"><strong>&laquo;</strong></span>
-					</a></li>
-					<li class="page-item active" aria-current="page"><a
-						class="page-link" href="#" style="color: white !important;">1</a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Next"> <span aria-hidden="true"><strong>&raquo;</strong></span>
-					</a></li>
+				<ul class="pagination justify-content-center">
+					<%-- 처음으로 보여주기 여부 --%>
+					<c:if test="${pagination.showFirst}">
+						<li class="page-item"><a class="page-link" href="?page=1"
+							aria-label="First"> <span aria-hidden="true">처음으로</span>
+						</a></li>
+					</c:if>
+
+					<!-- 이전 목록 보여주기 여부 -->
+					<c:if test="${pagination.showPrevious}">
+						<li class="page-item"><a class="page-link"
+							href="?page=${pagination.previousStartPage}"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						</a></li>
+					</c:if>
+
+					<c:forEach var="i" begin="${pagination.startPage }"
+						end="${pagination.endPage }">
+						<c:choose>
+							<c:when test="${i == pagination.params.requestPage}">
+								<li class="page-item active"><a class="page-link"
+									style="color: white !important;">${i}</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item"><a class="page-link"
+									href="?page=${i}">${i}</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+
+					<!-- 다음 목록 보여주기 여부 -->
+					<c:if test="${pagination.showNext}">
+						<li class="page-item"><a class="page-link"
+							href="?page=${pagination.nextStartPage}" aria-label="Next"> <span
+								aria-hidden="true">&raquo;</span>
+						</a></li>
+					</c:if>
+					
+					<%-- 마지막으로 보여주기 여부 --%>
+					<c:if test="${pagination.showLast}">
+						<li class="page-item"><a class="page-link"
+							href="?page=${pagination.totalPages}" aria-label="First"> <span
+								aria-hidden="true">마지막으로</span>
+						</a></li>
+					</c:if>
 				</ul>
 			</nav>
 		</div>
 	</section>
-
 
 	<!-- =============== Footer =============== -->
 	<jsp:include page="/WEB-INF/views/modules/footer.jsp" />

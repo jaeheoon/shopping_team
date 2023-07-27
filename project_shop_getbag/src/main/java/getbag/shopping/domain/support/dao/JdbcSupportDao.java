@@ -23,10 +23,9 @@ public class JdbcSupportDao implements SupportDao {
 		sb.append(" INSERT INTO product_qna (")
 		  .append("		    qnacode,")
 		  .append("		    qnatitle,")
-		  .append("		    qnacont,")
 		  .append("		    qnadate,")
 		  .append("		    qnaauth")
-		  .append(" ) VALUES (qnacode_seq.nextval, ?, ?, sysdate, ?)");
+		  .append(" ) VALUES (qnacode_seq.nextval, ?, sysdate, ?)");
 
 		StringBuilder sb2 = new StringBuilder();
 		sb2.append(" SELECT qnacode_seq.currval qnacode")
@@ -37,8 +36,7 @@ public class JdbcSupportDao implements SupportDao {
 		try {
 			pstmt = connection.prepareStatement(sb.toString());
 			pstmt.setString(1, support.getQnatitle());
-			pstmt.setString(2, support.getQnacont());
-			pstmt.setString(3, support.getQnaauth());
+			pstmt.setString(2, support.getQnaauth());
 			pstmt.executeUpdate();
 			pstmt.close();
 
@@ -59,13 +57,40 @@ public class JdbcSupportDao implements SupportDao {
 		return support;
 	}
 	
+	@Override
+	public int getCountAll(Connection connection) {
+		int count = 0;
+		StringBuilder sb = new StringBuilder();
+		sb.append(" SELECT COUNT(*) cnt")
+		  .append(" FROM team.product_qna");
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = connection.prepareStatement(sb.toString());
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("cnt");
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+			} catch (Exception e) {}
+		}
+		return count;
+	}
+	
 	/**
 	 * 문의 번호로 글 찾기
 	 */
 	public Support findByCode(Connection connection, String code) {
 		Support support = null;
 		StringBuilder sb = new StringBuilder();
-		sb.append(" SELECT * FROM team.product_qna").append(" WHERE qnacode = ?");
+		sb.append(" SELECT * FROM team.product_qna")
+		  .append(" WHERE qnacode = ?");
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -77,12 +102,10 @@ public class JdbcSupportDao implements SupportDao {
 			if (rs.next()) {
 				String qnacode = rs.getString("qnacode");
 				String qnatitle = rs.getString("qnatitle");
-				String cont = rs.getString("qnacont");
 				String auth = rs.getString("qnaauth");
 				support = new Support();
 				support.setQnacode(qnacode);
 				support.setQnatitle(qnatitle);
-				support.setQnacont(cont);
 				support.setQnaauth(auth);
 			}
 
@@ -100,44 +123,53 @@ public class JdbcSupportDao implements SupportDao {
 	}
 
 	/**
-	 * 문의 내용 전체 찾기
+	 * 문의 내용 페이지별로 찾기
 	 */
 	@Override
-	public List<Support> findByAll(Connection connection) {
-		List<Support> list = null;
-		StringBuilder sb = new StringBuilder();
-		sb.append(" SELECT * FROM team.product_qna");
+	public List<Support> findByAll(Connection connection, int requestPage, int elementSize) {
+	    List<Support> list = null;
+	    StringBuilder sb = new StringBuilder();
+	    sb.append(" SELECT page, code, title, auth, cont")
+	      .append(" FROM (")
+	      .append("   SELECT ceil(ROWNUM / ?) page, qna.qnacode code, qnatitle title, re.recont cont, qnaauth auth")
+	      .append("   FROM team.product_qna qna")
+	      .append("   LEFT JOIN team.product_qna_re re ON qna.qnacode = re.qnacode")
+	      .append("   ORDER BY code")
+	      .append(" ) WHERE page = ?");
 
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		Support support = null;
-		try {
-			pstmt = connection.prepareStatement(sb.toString());
-			rs = pstmt.executeQuery();
-			list = new ArrayList<Support>();
-			while (rs.next()) {
-				String qnacode = rs.getString("qnacode");
-				String qnatitle = rs.getString("qnatitle");
-				String cont = rs.getString("qnacont");
-				String auth = rs.getString("qnaauth");
-				support = new Support();
-				support.setQnacode(qnacode);
-				support.setQnatitle(qnatitle);
-				support.setQnacont(cont);
-				support.setQnaauth(auth);
-				list.add(support);
-			}
-		} catch (Exception e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			try {
-				if (rs != null)
-					rs.close();
-				if (pstmt != null)
-					pstmt.close();
-			} catch (Exception e) {}
-		}
-		return list;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    try {
+	        pstmt = connection.prepareStatement(sb.toString());
+	        pstmt.setInt(1, elementSize);
+	        pstmt.setInt(2, requestPage);
+	        rs = pstmt.executeQuery();
+	        list = new ArrayList<Support>();
+	        while (rs.next()) {
+	            String qnacode = rs.getString("code");
+	            String qnatitle = rs.getString("title");
+	            String cont = rs.getString("cont");
+	            String auth = rs.getString("auth");
+	            // 문의 페이지 줄바꿈 처리
+	            qnatitle = qnatitle.replaceAll("\r", "<br>");
+	            Support support = new Support();
+	            support.setQnacode(qnacode);
+	            support.setQnatitle(qnatitle);
+	            support.setCont(cont);
+	            support.setQnaauth(auth);
+	            list.add(support);
+	        }
+	    } catch (Exception e) {
+	        throw new RuntimeException(e.getMessage());
+	    } finally {
+	        try {
+	            if (rs != null)
+	                rs.close();
+	            if (pstmt != null)
+	                pstmt.close();
+	        } catch (Exception e) {}
+	    }
+	    return list;
 	}
 
 }

@@ -30,7 +30,6 @@ public class MemberSigninController implements HttpController {
             if(request.getMethod().equalsIgnoreCase("post")) {
                String loginId = paramMap.get("id");
                String loginPasswd = paramMap.get("passwd");
-               String saveId = paramMap.get("saveid");
                
                Member loginMember = memberService.isMember(loginId, loginPasswd);
                // 회원인 경우

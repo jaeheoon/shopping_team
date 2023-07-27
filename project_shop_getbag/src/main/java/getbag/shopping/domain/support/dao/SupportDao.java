@@ -15,6 +15,8 @@ public interface SupportDao {
 	public Support create(Connection connection, Support support);
 	//문의 코드로 출력
 	public Support findByCode(Connection connection, String code);
+	// 페이징 계산에 필요한 게시글 전체 갯수 반환
+	public int getCountAll(Connection connection);
 	//문의 전체 출력
-	public List<Support> findByAll(Connection connection);
+	public List<Support> findByAll(Connection connection, int requestPage, int elementSize);
 }

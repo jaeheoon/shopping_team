@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 import getbag.shopping.domain.common.factory.ServiceFactory;
 import getbag.shopping.domain.support.dao.SupportDao;
 import getbag.shopping.domain.support.dto.Support;
+import getbag.shopping.web.common.page.PageParams;
 
 /**
  * 고객센터 관련 비즈니스 로직 처리 및 트랜잭션 관리 구현체
@@ -46,14 +47,31 @@ public class SupportServiceImpl implements SupportService{
 		}
 		return support;
 	}
+	
+	@Override
+	public int getAticleCount() {
+		int count = 0;
+		Connection connection = null;
+		try {
+			connection = dataSource.getConnection();
+			count = supportDao.getCountAll(connection);
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				if (connection != null)	connection.close();
+			} catch (SQLException e1) {	}
+		}
+		return count;
+	}
 
 	@Override
-	public List<Support> readSupport() {
+	public List<Support> readSupport(PageParams params) {
 		List<Support> list = null;
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
-			list = supportDao.findByAll(connection);
+			list = supportDao.findByAll(connection, params.getRequestPage(), params.getElementSize());
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
@@ -67,9 +85,9 @@ public class SupportServiceImpl implements SupportService{
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		
 //		문의 관련 테스트------------------------------------------------------------------------------------------------------------------------------------------------------
-//		SupportService supportService = serviceFactory.getSupportService();
+		SupportService supportService = serviceFactory.getSupportService();
 //		Support support = null;
-//		support = new Support("맘에 들어요", "깔끔하고 이쁘네요", "최재헌");
+//		support = new Support("배송은 언제오나요1", "최재헌");
 //		support = supportService.registerSupport(support);
 //		System.out.println("등록 후 상세정보 : " + support);
 		
