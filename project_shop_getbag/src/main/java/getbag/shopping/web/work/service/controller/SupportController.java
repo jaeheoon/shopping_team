@@ -53,16 +53,19 @@ public class SupportController implements HttpController{
 				viewName = "support/support";
 
 			} else {
-				String title = paramMap.get("title");
+				String title = paramMap.get("content");
 
-				HttpSession session = request.getSession();
+//				로그인 후 고객센터 글 올릴라면 필요
+//				HttpSession session = request.getSession();
 				
 				Support sup = new Support();
-				if (session.getAttribute("loginMember") != null) {
-					sup.setQnatitle(title);
-				} else {
-					System.out.println("로그인이 안되어있습니다");
-				}
+				sup.setQnatitle(title);
+				
+//				if (session.getAttribute("loginMember") != null) {
+				
+//				} else {
+//					sup.setQnatitle("");
+//				}
 				
 				supportService.registerSupport(sup);
 
