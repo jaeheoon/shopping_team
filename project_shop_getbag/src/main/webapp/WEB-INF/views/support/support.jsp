@@ -35,7 +35,7 @@
 				<p class="mb-0 m-1">문의사항을 남겨주시면 빠른 시일 내에 답변해드리도록 하겠습니다.</p>
 			</div>
 		</div>
-		<form action="${path}/support">
+		<form action="${path}/support" method="post" role="form" novalidate>
 			<div class="p-5">
 				<textarea class="form-control border-dark-subtle border-3 p-3"
 					id="exampleFormControlTextarea1" rows="2" name="content"
@@ -123,7 +123,7 @@
 								aria-hidden="true">&raquo;</span>
 						</a></li>
 					</c:if>
-					
+
 					<%-- 마지막으로 보여주기 여부 --%>
 					<c:if test="${pagination.showLast}">
 						<li class="page-item"><a class="page-link"

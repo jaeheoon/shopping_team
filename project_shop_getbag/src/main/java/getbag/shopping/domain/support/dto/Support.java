@@ -12,7 +12,7 @@ public class Support {
 	private String qnaCode; 			// 문의 코드    	 - qnacode - db에서 가져와서 저장하는 역할, 따로 생성자에서 등록은 안해준다
 	private String proCode; 			// 상품 아이디    	 - procode
 	private String qnaTitle; 			// 문의 제목    	 - qnatitle
-	private String cont; 			// 답변 제목    	 - cont
+	private String cont; 				// 답변 제목    	 - cont
 	private String qnaAuth; 			// 작성자 아이디     - qnaauth
 
 	public Support() {}
