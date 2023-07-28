@@ -10,9 +10,18 @@
 						href="<%=request.getContextPath()%>/getbag/map">매장찾기</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="<%=request.getContextPath()%>/getbag/mypage">마이페이지</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="<%=request.getContextPath()%>/getbag/wish-contain">위시리스트</a>
-					</li>
+					<c:choose>
+						<c:when test="${empty WishList}">
+							<li class="nav-item"><a class="nav-link"
+								href="<%=request.getContextPath()%>/getbag/wish-empty">위시리스트</a>
+							</li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link"
+								href="<%=request.getContextPath()%>/getbag/wish-contain">위시리스트</a>
+							</li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 		</div>

@@ -105,7 +105,7 @@ $(document).ready(function() {
           <img src="<%=request.getContextPath()%>/img/yellow/yellow2.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">[LOEWE]&nbsp;&nbsp;미니 퍼즐 폴드 토트</p>
-            <p>>₩ 2,100,000</p>
+            <p>₩ 2,100,000</p>
           </div>
         </div>
         <div class="col-3 p-0">
@@ -131,7 +131,7 @@ $(document).ready(function() {
           <img src="<%=request.getContextPath()%>/img/brown/brown1.jpg" alt="" class="productItem border-top border-bottom border-end"></a>
           <div class="product">
             <p class="mt-3">[LOEWE]&nbsp;&nbsp;해먹 컴팩트 백</p>
-            <p>>₩ 4,400,000</p>
+            <p>₩ 4,400,000</p>
           </div>
         </div>
         <div class="col-3 p-0">
