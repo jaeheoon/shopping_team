@@ -38,7 +38,7 @@ $(document).ready(function() {
   
 
   <!-- =============== Product =============== -->
-  <div class="product mt-5">
+  <div class="product">
     <h3 class="text-center ms-5 fw-bold">BAG</h3>
     <div class="row">
       <div class="col-6">

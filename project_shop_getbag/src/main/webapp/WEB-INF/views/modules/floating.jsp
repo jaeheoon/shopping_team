@@ -1,15 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<div class="floating">
+<div class="floating" id="floating">
     <ul>
      <li><a href="<%=request.getContextPath()%>/getbag/basket-empty"><i class="bi bi-cart2" style="font-size: 3rem;"></i></a></li>
      <li><a href="#"><i class="bi bi-arrow-up-circle" style="font-size: 3rem;"></i></a></li>
     </ul>
-   </div>
-
-
-  <!-- Add any necessary JavaScript or external JS files here -->
+  </div>
+  
+  
   <script>
     // Debounce function to delay the execution of the scroll event handling
     function debounce(func, wait, immediate) {
@@ -27,20 +26,38 @@
         if (callNow) func.apply(context, args);
       };
     }
-    // Function to show/hide the floating div based on the scroll position
-    function toggleFloatingDiv() {
-      var floatingDiv = document.querySelector('.floating');
-      var scrollPosition = window.scrollY || window.pageYOffset;
-      if (scrollPosition > 100) { // Adjust the scroll position as needed
-        floatingDiv.style.display = 'block';
-        floatingDiv.style.opacity = 1;
+
+    // Function to smoothly animate opacity
+    function animateOpacity(targetOpacity, element) {
+      var currentOpacity = parseFloat(element.style.opacity || 0);
+
+      if (currentOpacity.toFixed(2) !== targetOpacity.toFixed(2)) {
+        // Incrementally update the opacity
+        currentOpacity += (targetOpacity - currentOpacity) * 0.1;
+        element.style.opacity = currentOpacity;
+        requestAnimationFrame(function () {
+          animateOpacity(targetOpacity, element);
+        });
       } else {
-        floatingDiv.style.opacity = 0;
-        setTimeout(function () {
-          floatingDiv.style.display = 'none';
-        }, 500); // Adjust the timeout to match the transition duration in CSS
+        // Animation complete, set the final opacity and display
+        element.style.opacity = targetOpacity;
+        element.style.display = targetOpacity > 0 ? 'block' : 'none';
       }
     }
+
+    // Function to check if the quick button should be visible
+    function checkQuickButtonVisibility() {
+      var floating = document.getElementById('floating');
+      var scrollPosition = window.scrollY || window.pageYOffset;
+
+      if (scrollPosition > 1800) { // Adjust the scroll position as needed
+         floating.style.display = 'block';
+        animateOpacity(1, floating);
+      } else {
+        animateOpacity(0, floating);
+      }
+    }
+
     // Add event listener for debounced scroll event
-    window.addEventListener('scroll', debounce(toggleFloatingDiv, 200));
+    window.addEventListener('scroll', debounce(checkQuickButtonVisibility, 100));
   </script>

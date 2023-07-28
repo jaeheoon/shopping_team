@@ -143,14 +143,15 @@ a:active {
 .mainbox:hover img{
 	transform: scale(1.2);
 }
+
 /********* floating *********/
 .floating {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.2s ease-out;
   position: fixed;
   right: 1%;
-  bottom: 10%;
+  bottom: 23%;
   z-index: 999999999;
 }
 
@@ -219,7 +220,7 @@ footer {
 
 /********** My-page **********/
 .myPage {
-	margin-top: 120px;
+	margin-top: 95px;
 	flex: 1;
 }
 
@@ -235,14 +236,14 @@ footer {
 
 /********** Basket **********/
 .basket {
-	margin-top: 95px;
+	margin-top: 120px;
 	flex: 1;
 	width: 70%;
 }
 
 /********** Wish **********/
 .wish {
-	margin-top: 95px;
+	margin-top: 120px;
 	flex: 1;
 	width: 70%;
 }

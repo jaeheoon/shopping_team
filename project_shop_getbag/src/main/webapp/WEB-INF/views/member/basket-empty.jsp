@@ -24,7 +24,7 @@
   <!-- =============== Basket Empty =============== -->
   <div class="basket container">
     <div class="d-flex">
-      <h4 class="ms-3 fw-bold"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;장바구니 (0)</h4>
+      <h4 class="ms-3 fw-bold"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;장바구니</h4>
     </div>
     <hr style="background: black; height: 3px;">
     <div class="basketbox text-center">
