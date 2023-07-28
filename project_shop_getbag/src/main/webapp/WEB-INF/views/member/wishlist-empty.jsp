@@ -23,7 +23,7 @@
 
   <!-- =============== WishList Empty =============== -->
   <div class="wish container">
-    <div class="d-flex mt-5">
+    <div class="d-flex">
       <h4 class="ms-3 fw-bold"><i class="fas fa-heart"></i>&nbsp;&nbsp;위시리스트</h4>
     </div>
     <hr style="background: black; height: 3px;">
