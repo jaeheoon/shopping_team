@@ -34,7 +34,6 @@
 
 	String pimageqty = product.getPimageqty();
 	String[] pimages = pimageqty.split(",");
-	System.out.println(pimages[2]);
 	%>
 
 	<!-- =============== Product-detail =============== -->
